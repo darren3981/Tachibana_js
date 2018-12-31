@@ -38,7 +38,10 @@ exports.run = (client, message, args) => {
       .setDescription("the bot command is (t.)")
       .setColor(16389353)
       .setThumbnail("https://i.imgur.com/doBAnRN.png")
-      .setFooter("requested by "+ message.author.username, message.author.displayAvatarURL)
+      .setFooter(
+        "requested by " + message.author.username,
+        message.author.displayAvatarURL
+      )
       .setTimestamp()
       .addField("8ball", "invoke the great wisdom of Tachibana", false)
       .addField("catgirl", "posts a cute catgirl! Modifiers: nsfw", true)
@@ -57,7 +60,10 @@ exports.run = (client, message, args) => {
       .setDescription("the bot command is (t.)")
       .setColor(16389353)
       .setThumbnail("https://i.imgur.com/doBAnRN.png")
-      .setFooter("requested by "+ message.author.username, message.author.displayAvatarURL)
+      .setFooter(
+        "requested by " + message.author.username,
+        message.author.displayAvatarURL
+      )
       .setTimestamp()
       .addField(
         "bitcoin",
@@ -88,7 +94,10 @@ exports.run = (client, message, args) => {
       .setDescription("the bot command is (t.)")
       .setColor(16389353)
       .setThumbnail("https://i.imgur.com/doBAnRN.png")
-      .setFooter("requested by "+ message.author.username, message.author.displayAvatarURL)
+      .setFooter(
+        "requested by " + message.author.username,
+        message.author.displayAvatarURL
+      )
       .setTimestamp()
       .addField(
         "How to navigate the help command",
@@ -97,7 +106,12 @@ exports.run = (client, message, args) => {
       )
       .addField("eve", "displays eve related commands", false)
       .addField("fun", "displays the fun related commands", false)
-      .addField("tools", "displays the useful commands", false);
+      .addField("tools", "displays the useful commands", false)
+      .addField(
+        "want to add Tachibana to your server?",
+        "if you want to add Tachibana to your own server just click [this](https://discordapp.com/oauth2/authorize?client_id=494517764539547685&permissions=70634561&scope=bot)",
+        false
+      );
     message.channel.send({ embed });
   }
 };

@@ -12,4 +12,4 @@ To get started add the bot to your server and use the command (t.help) to access
 
 
 
-To add this bot to your own server click the url https://discordapp.com/oauth2/authorize?client_id=494517764539547685&permissions=70634561&scope=bot
+To add this bot to your own server click [here](https://discordapp.com/oauth2/authorize?client_id=494517764539547685&permissions=70634561&scope=bot)

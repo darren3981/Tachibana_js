@@ -11,6 +11,8 @@ async function plex() {
   return minprice;
 }
 exports.run = async (client, message, args) => {
+  let amount = args.slice(0).join(" ");
+  if (amount == 0) amount = 500;
     const plexprice = await plex();
     const embed = new Discord.RichEmbed()
     .setColor(16389353)
@@ -19,6 +21,6 @@ exports.run = async (client, message, args) => {
     .setThumbnail("https://web.ccpgamescdn.com/secure/images/plex/plex-icon-110.png")
     .setAuthor("Plex Price")
     .addField("current price of plex:",plexprice.toLocaleString())
-    .addField("current price of plex x500:",(plexprice * 500).toLocaleString())
+    .addField("current price of plex x" + amount + ":",(plexprice * amount).toLocaleString())
     message.channel.send({ embed });
 }

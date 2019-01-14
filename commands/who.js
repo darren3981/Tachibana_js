@@ -50,6 +50,16 @@ async function a_info(character) {
     //console.log(error);
   }
 }
+async function zstats(char_id) {
+  //call char info with char_info()
+
+  const zsearch = {
+    uri: "https://zkillboard.com/api/stats/characterID/" + char_id + "/"
+  };
+  let response = rp(zsearch);
+  let zstats = JSON.parse(await response);
+  return zstats;
+}
 exports.run = async (client, message, args) => {
   if (!args[0]) return message.reply("you have to name a character idiot");
   let name = args.slice(0).join(" ");
@@ -58,6 +68,7 @@ exports.run = async (client, message, args) => {
     const character = await char_info(char_id);
     const corp_return = await corp_info(character);
     const a_return = await a_info(character);
+    const zinfo = await zstats(char_id)
     zlink = "https://zkillboard.com/character/" + char_id;
     evewholink = "https://evewho.com/pilot/" + encodeURIComponent(character.name)
     // embed
@@ -84,9 +95,11 @@ exports.run = async (client, message, args) => {
           : "Character is not in an Alliance",
         false
       )
+      .addField("K/D:", zinfo.shipsDestroyed + " / " + zinfo.shipsLost, false)
       .addField("Links:", "[zkill](" + zlink + ")" + "\n [evewho](" + evewholink + ")", false);
     message.channel.send({ embed });
   } catch (error) {
+    console.log(error)
     message.channel.send("character doesn't exist or you can't spell (lol)");
     //client.users.get('104780607883599872').send('someone broke who');
   }

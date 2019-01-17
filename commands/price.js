@@ -38,7 +38,10 @@ async function iteminfo(item_id) {
 }
 exports.run = async (client, message, args) => {
   if (!args[0]) return message.reply("you have to name an item idiot");
-  let name = args.slice(0).join(" ");
+  let input = args.slice(0).join(" ");
+  let name = input.replace(/[0-9]/g, "");
+  let amount = input.replace(/\D/g, "");
+  if (amount == 0) amount = 1;
   try {
     const item_id = await search(name);
     const price = await prices(item_id);
@@ -50,11 +53,11 @@ exports.run = async (client, message, args) => {
         "requested by " + message.author.username,
         message.author.displayAvatarURL
       )
-      .setAuthor(itemname)
+      .setAuthor(itemname + " x: " + amount)
       .setThumbnail(
         "http://imageserver.eveonline.com/Type/" + item_id + "_64.png"
       )
-      .addField("Current:", price.toLocaleString() + " isk", false);
+      .addField("Current:", (price * amount).toLocaleString() + " isk", false);
     message.channel.send({ embed });
   } catch (error) {
     console.log(error);

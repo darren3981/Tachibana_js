@@ -48,7 +48,7 @@ exports.run = (client, message, args) => {
       .addField("Type of Precipitation:",forecast.currently.precipType ? forecast.currently.precipType : "N/A",true)
       .addField("Humidity:",(forecast.currently.humidity * 100).toString() + "%",true)  
       .addField("Wind Speed:",(forecast.currently.windSpeed).toString() + "mph",true)  
-      .addField("Alerts:", forecast.alerts ? forecast.alerts[0].title : "N/A",true)
+      .addField("Alerts:", forecast.alerts ? "[" + forecast.alerts[0].title + "](" + forecast.alerts[0].uri + ")" : "N/A",true)
     message.channel.send({ embed });
         }//bracket ending weather()
         weather();     

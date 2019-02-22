@@ -24,8 +24,8 @@ async function prices(item_id) {
   };
   let response = rp(options);
   let data2 = JSON.parse(await response);
-  const poop = data2.map(data2 => data2.price);
-  const minprice = Math.min(...poop);
+  const prices = data2.map(data2 => data2.price);
+  const minprice = Math.min(...prices);
   return minprice;
 }
 async function iteminfo(item_id) {

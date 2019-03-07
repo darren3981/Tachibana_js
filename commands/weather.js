@@ -20,7 +20,7 @@ exports.run = (client, message, args) => {
         //console.log(place.geometry);
         await darksky
             .coordinates(place.geometry)
-            .units('us')
+            .units('auto')
             .language('en')
             .exclude()
             .get()

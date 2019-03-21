@@ -1,6 +1,6 @@
 const opencage = require("opencage-api-client");
 const DarkSky = require("dark-sky");
-const config = require("../config.json");
+const config = require("../../config.json");
 const darksky = new DarkSky(config.darkkey);
 const Discord = require("discord.js");
 

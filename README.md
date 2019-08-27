@@ -1,7 +1,7 @@
 # Tachibana <img width="100" alt="picture" src="https://i.imgur.com/FRqAw8p.png">
 
 
-Tachibana is a discord bot that comes with several features such as 8ball, a bitcoin price checker, and random daily history facts.
+Tachibana is a discord bot that comes with several features such as 8ball, a bitcoin price checker, a poll, and random daily history facts.
 
 
 Tachibana also has eve related commands such as character searching, market price searching, and range calculators.

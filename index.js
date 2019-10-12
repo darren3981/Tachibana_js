@@ -43,5 +43,5 @@ files.forEach(file => {
   console.log(`Attempting to load command ${commandName}`);
   client.commands.set(commandName, props);
 });
-
+//Boosh Brothers Unite
 client.login(config.token);

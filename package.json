@@ -20,6 +20,6 @@
     "recursive-readdir": "^2.2.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
-    "ws": "^6.1.2"
+    "ws": "^7.4.5"
   }
 }
